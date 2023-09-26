@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: nginx
+    container_name: ng-reverse-proxy
+    networks:
+      - exercicio-2
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:8080"
+
+  app:
+    build:
+      context: node-app
+    container_name: app
+    entrypoint: ["/entrypoint.sh"]
+    command: ["npm", "run", "start"]
+    networks:
+      - exercicio-2
+    tty: true
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - exercicio-2
+
+networks:
+  exercicio-2:
+    driver: bridge
