@@ -6,10 +6,10 @@ import Address from "../../../../domain/customer/value-object/address";
 import Product from "../../../../domain/product/entity/product";
 import CostumerModel from "../../../customer/repository/sequelize/costumer.model";
 import CustomerRepository from "../../../customer/repository/sequelize/customer.repository";
-import OrderModel from "../../../db/sequelize/model/order.model";
 import ProductModel from "../../../product/repository/sequelize/product.model";
 import ProductRepository from "../../../product/repository/sequelize/product.repository";
 import OrderItemModel from "./order-item.model";
+import OrderModel from "./order.model";
 import OrderRepository from "./order.repository";
 
 describe("Order repository test", () => {
