@@ -1,15 +1,11 @@
-# Desafio de DDD.
+# Desafio Clean Architecture.
 
-Nesse desafio ele é divido em dois.
+Nesse desafio foi feito toda a parte de CA.
 
-## 1 - Criacao do repository OrderRepository, o mesmo foi feito baseado na interface.
+### 1 - Criacao do UseCase para produtos.
 
-### OrderRepository
+### 2 - Camada de API de Produtos.
 
-Foi criado o mesmo na pasta **src/infrastructure/order/repository/sequelize/order.repository.spec**, fiz algumas alteracoes como *excluir/adicionar* e todas as outras funcionalidades.
+### 3 - Criacao do Notification Pattner.
 
-## 2 - Criacao dos Events de Customer.
-
-Foi criado os events dentro do **src/domain/customer/events**, os mesmo foram inclusos, bem como, adicionei dentro do *event-dispatcher.spec.ts*, o mesmo porem nao foi incluso em um **use-case** de uso de aplicacao, mas entendo que isso seria incluso talvez depois de tais realizacoes.
-
-
+### 4 - Criacao de classe para evitar "Acoplamento" nas validacoes.
