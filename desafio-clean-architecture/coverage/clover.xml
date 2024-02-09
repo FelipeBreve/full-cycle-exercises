@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707357603602" clover="3.2.0">
-  <project timestamp="1707357603603" name="All files">
-    <metrics statements="1444" coveredstatements="1404" conditionals="200" coveredconditionals="183" methods="117" coveredmethods="112" elements="1761" coveredelements="1699" complexity="0" loc="1444" ncloc="1444" packages="32" files="45" classes="45"/>
+<coverage generated="1707487992890" clover="3.2.0">
+  <project timestamp="1707487992891" name="All files">
+    <metrics statements="1422" coveredstatements="1382" conditionals="198" coveredconditionals="181" methods="114" coveredmethods="109" elements="1734" coveredelements="1672" complexity="0" loc="1422" ncloc="1422" packages="31" files="43" classes="43"/>
     <package name="domain.@shared.entity">
       <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="entity.abstract.ts" path="/home/felipe/estudos/full-cycle-exercises/desafio-clean-architecture/src/domain/@shared/entity/entity.abstract.ts">
@@ -580,7 +580,7 @@
       </file>
     </package>
     <package name="domain.product.entity">
-      <metrics statements="101" coveredstatements="89" conditionals="17" coveredconditionals="14" methods="15" coveredmethods="13"/>
+      <metrics statements="118" coveredstatements="106" conditionals="19" coveredconditionals="16" methods="14" coveredmethods="12"/>
       <file name="product-b.ts" path="/home/felipe/estudos/full-cycle-exercises/desafio-clean-architecture/src/domain/product/entity/product-b.ts">
         <metrics statements="50" coveredstatements="38" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
@@ -635,7 +635,7 @@
         <line num="50" count="1" type="stmt"/>
       </file>
       <file name="product.ts" path="/home/felipe/estudos/full-cycle-exercises/desafio-clean-architecture/src/domain/product/entity/product.ts">
-        <metrics statements="51" coveredstatements="51" conditionals="9" coveredconditionals="9" methods="8" coveredmethods="8"/>
+        <metrics statements="68" coveredstatements="68" conditionals="11" coveredconditionals="11" methods="7" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -646,47 +646,64 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="55" type="stmt"/>
         <line num="13" count="55" type="stmt"/>
         <line num="14" count="55" type="stmt"/>
         <line num="15" count="55" type="stmt"/>
         <line num="16" count="55" type="stmt"/>
         <line num="17" count="55" type="stmt"/>
-        <line num="18" count="55" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="61" type="stmt"/>
-        <line num="22" count="61" type="stmt"/>
-        <line num="23" count="61" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="8" type="stmt"/>
         <line num="26" count="8" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="10" type="stmt"/>
         <line num="30" count="10" type="stmt"/>
-        <line num="31" count="10" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="135" type="stmt"/>
         <line num="34" count="135" type="stmt"/>
-        <line num="35" count="135" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="38" count="127" type="stmt"/>
-        <line num="39" count="127" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="42" count="133" type="stmt"/>
-        <line num="43" count="133" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="66" type="stmt"/>
+        <line num="38" count="66" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="72" type="stmt"/>
+        <line num="42" count="72" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
-        <line num="45" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="46" count="61" type="cond" truecount="1" falsecount="0"/>
-        <line num="47" count="8" type="stmt"/>
-        <line num="48" count="8" type="stmt"/>
-        <line num="49" count="61" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="51" count="61" type="cond" truecount="1" falsecount="0"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="61" type="stmt"/>
+        <line num="55" count="61" type="cond" truecount="1" falsecount="0"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+        <line num="58" count="61" type="stmt"/>
+        <line num="59" count="61" type="cond" truecount="1" falsecount="0"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="62" count="61" type="stmt"/>
+        <line num="63" count="61" type="cond" truecount="1" falsecount="0"/>
+        <line num="64" count="8" type="stmt"/>
+        <line num="65" count="8" type="stmt"/>
+        <line num="66" count="61" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
       </file>
     </package>
     <package name="domain.product.event">
@@ -727,7 +744,7 @@
       </file>
     </package>
     <package name="domain.product.factory">
-      <metrics statements="26" coveredstatements="26" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <file name="product.factory.ts" path="/home/felipe/estudos/full-cycle-exercises/desafio-clean-architecture/src/domain/product/factory/product.factory.ts">
         <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -748,18 +765,6 @@
         <line num="16" count="19" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="product.validator.factory.ts" path="/home/felipe/estudos/full-cycle-exercises/desafio-clean-architecture/src/domain/product/factory/product.validator.factory.ts">
-        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="61" type="stmt"/>
-        <line num="8" count="61" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-      </file>
     </package>
     <package name="domain.product.service">
       <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -778,42 +783,6 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="domain.product.validator">
-      <metrics statements="30" coveredstatements="30" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
-      <file name="product.yup.validator.ts" path="/home/felipe/estudos/full-cycle-exercises/desafio-clean-architecture/src/domain/product/validator/product.yup.validator.ts">
-        <metrics statements="30" coveredstatements="30" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="61" type="stmt"/>
-        <line num="8" count="61" type="stmt"/>
-        <line num="9" count="61" type="stmt"/>
-        <line num="10" count="61" type="stmt"/>
-        <line num="11" count="61" type="stmt"/>
-        <line num="12" count="61" type="stmt"/>
-        <line num="13" count="61" type="stmt"/>
-        <line num="14" count="61" type="stmt"/>
-        <line num="15" count="61" type="stmt"/>
-        <line num="16" count="61" type="stmt"/>
-        <line num="17" count="61" type="stmt"/>
-        <line num="18" count="61" type="stmt"/>
-        <line num="19" count="61" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="21" count="8" type="stmt"/>
-        <line num="22" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="9" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="25" count="9" type="stmt"/>
-        <line num="26" count="9" type="stmt"/>
-        <line num="27" count="9" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
-        <line num="29" count="61" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
       </file>
     </package>
     <package name="infrastructure.api">

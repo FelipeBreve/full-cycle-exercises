@@ -47,7 +47,7 @@ describe("Unit test usecase update a product", () => {
             name: "",
             price: 20
         }
-        await expect(usecase.execute(input)).rejects.toThrow("product: Name is required")
+        await expect(usecase.execute(input)).rejects.toThrow("Product: Name is required")
     })
 
     it("should thrown an error when price is missing", async () => {
@@ -59,7 +59,7 @@ describe("Unit test usecase update a product", () => {
             name: "Product UseCase Test 1 Updated",
             price: 0
         }
-        await expect(usecase.execute(input)).rejects.toThrow("product: Price must be greater than zero")
+        await expect(usecase.execute(input)).rejects.toThrow("Product: Price must be greater than zero")
     })
 
     it("should thrown an error when name is missing and princing", async () => {
@@ -71,6 +71,6 @@ describe("Unit test usecase update a product", () => {
             name: "",
             price: 0
         }
-        await expect(usecase.execute(input)).rejects.toThrow("product: Name is required,product: Price must be greater than zero")
+        await expect(usecase.execute(input)).rejects.toThrow("Product: Name is required,Product: Price must be greater than zero")
     })
 })
