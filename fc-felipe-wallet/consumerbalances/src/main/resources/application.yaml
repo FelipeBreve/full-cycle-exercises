@@ -1,0 +1,23 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: consumerbalances
+  datasource:
+    url: jdbc:mysql://mysql-balance:3306/balance
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  sql:
+    init:
+      platform: postgres
+  kafka:
+    bootstrap-servers: "kafka:29092"
+    consumer:
+      group-id: "consumerbalances"
+      key-serializer: StringDeserializer.class
+      value-serializer: StringDeserializer.class

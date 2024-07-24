@@ -1,0 +1,36 @@
+
+POST http://localhost:8090/clients HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "account3",
+    "email": "account3@account3.com"
+}
+
+###
+
+POST http://localhost:8090/accounts HTTP/1.1
+Content-Type: application/json
+
+{
+    "client_id": "032061ab-e463-47ff-a6ee-44c61e9b04b8"
+}
+
+###
+
+POST http://localhost:8090/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+    "account_id_from": "account1",
+    "account_id_to": "account2",
+    "amount": 100
+}
+
+###
+GET http://localhost:3003/balance/balances/account1 HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3003/balance/balances/account2 HTTP/1.1
+Content-Type: application/json

@@ -1,0 +1,28 @@
+
+POST http://localhost:8090/clients HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Felipe 2",
+    "email": "felipe2@felipe.com"
+}
+
+###
+
+POST http://localhost:8090/accounts HTTP/1.1
+Content-Type: application/json
+
+{
+    "client_id": "b4db3b5b-1729-4732-8f47-1576b9751390"
+}
+
+###
+
+POST http://localhost:8090/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+    "account_id_from": "bf84bf20-4b5f-4fa9-a9ba-8b4970507af3",
+    "account_id_to": "3a8fd53d-d7a1-4550-94a9-00e14b7bb14f",
+    "amount": 100
+}
