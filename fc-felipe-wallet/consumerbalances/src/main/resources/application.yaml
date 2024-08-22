@@ -4,7 +4,7 @@ spring:
   application:
     name: consumerbalances
   datasource:
-    url: jdbc:mysql://mysql-balance:3306/balance
+    url: jdbc:mysql://localhost:3307/balance
     username: root
     password: root
   jpa:
@@ -16,7 +16,7 @@ spring:
     init:
       platform: postgres
   kafka:
-    bootstrap-servers: "kafka:29092"
+    bootstrap-servers: "localhost:9092"
     consumer:
       group-id: "consumerbalances"
       key-serializer: StringDeserializer.class
