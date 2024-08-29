@@ -1,0 +1,5 @@
+rootProject.name = 'fc-felipe-category'
+include 'domain'
+include 'application'
+include 'infrastructure'
+
