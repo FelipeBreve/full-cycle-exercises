@@ -74,7 +74,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
         return new Pagination<>(
                 pageResult.getNumber(),
                 pageResult.getSize(),
-                pageResult.getTotalPages(),
+                pageResult.getTotalElements(),
                 pageResult.map(CategoryJpaEntity::toAggregate).toList()
         );
     }

@@ -119,6 +119,7 @@ public class CreateCategoryUseCaseIT {
         final var aCommand =
                 CreateCategoryCommand.with(expectedName, expectedDescription, expectedIsActive);
 
+        // Como ja existe, entao o spy deve ser dessa maneira
         doThrow(new IllegalStateException(expectedErrorMessage))
                 .when(categoryGateway).create(any());
 
