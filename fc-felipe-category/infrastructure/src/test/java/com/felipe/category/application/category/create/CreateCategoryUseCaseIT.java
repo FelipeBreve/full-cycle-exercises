@@ -122,6 +122,7 @@ public class CreateCategoryUseCaseIT {
         doThrow(new IllegalStateException(expectedErrorMessage))
                 .when(categoryGateway).create(any());
 
+
         final var notification = useCase.execute(aCommand).getLeft();
 
         Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
