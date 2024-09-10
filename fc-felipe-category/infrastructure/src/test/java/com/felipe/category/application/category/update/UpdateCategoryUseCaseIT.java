@@ -4,6 +4,7 @@ import com.felipe.category.IntegrationTest;
 import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.category.CategoryGateway;
 import com.felipe.category.domain.exceptions.DomainException;
+import com.felipe.category.domain.exceptions.NotFoundException;
 import com.felipe.category.infrastructure.category.persistence.CategoryJpaEntity;
 import com.felipe.category.infrastructure.category.persistence.CategoryRepository;
 import org.junit.jupiter.api.Assertions;
@@ -191,11 +192,8 @@ public class UpdateCategoryUseCaseIT {
                 expectedIsActive
         );
 
-
         final var actualException =
-                Assertions.assertThrows(DomainException.class, () -> useCase.execute(aCommand));
-//        final var actualException =
-//                Assertions.assertThrows(NotFoundException.class, () -> useCase.execute(aCommand));
+                Assertions.assertThrows(NotFoundException.class, () -> useCase.execute(aCommand));
 
         Assertions.assertEquals(expectedErrorMessage, actualException.getMessage());
     }

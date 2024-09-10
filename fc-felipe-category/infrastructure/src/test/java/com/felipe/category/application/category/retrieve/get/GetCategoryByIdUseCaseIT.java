@@ -4,6 +4,7 @@ import com.felipe.category.IntegrationTest;
 import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.category.CategoryGateway;
 import com.felipe.category.domain.category.CategoryID;
+import com.felipe.category.domain.exceptions.NotFoundException;
 import com.felipe.category.infrastructure.category.persistence.CategoryJpaEntity;
 import com.felipe.category.infrastructure.category.persistence.CategoryRepository;
 import org.junit.jupiter.api.Assertions;
@@ -53,18 +54,18 @@ public class GetCategoryByIdUseCaseIT {
         Assertions.assertEquals(aCategory.getUpdatedAt().truncatedTo(ChronoUnit.MILLIS), actualCategory.updatedAt().truncatedTo(ChronoUnit.MILLIS));
     }
 
-//    @Test
-//    public void givenAInvalidId_whenCallsGetCategory_shouldReturnNotFound() {
-//        final var expectedErrorMessage = "Category with ID 123 was not found";
-//        final var expectedId = CategoryID.from("123");
-//
-////        final var actualException = Assertions.assertThrows(
-////                NotFoundException.class,
-////                () -> useCase.execute(expectedId.getValue())
-////        );
-//
-////        Assertions.assertEquals(expectedErrorMessage, actualException.getMessage());
-//    }
+    @Test
+    public void givenAInvalidId_whenCallsGetCategory_shouldReturnNotFound() {
+        final var expectedErrorMessage = "Category with ID 123 was not found";
+        final var expectedId = CategoryID.from("123");
+
+        final var actualException = Assertions.assertThrows(
+                NotFoundException.class,
+                () -> useCase.execute(expectedId.getValue())
+        );
+
+        Assertions.assertEquals(expectedErrorMessage, actualException.getMessage());
+    }
 
     @Test
     public void givenAValidId_whenGatewayThrowsException_shouldReturnException() {

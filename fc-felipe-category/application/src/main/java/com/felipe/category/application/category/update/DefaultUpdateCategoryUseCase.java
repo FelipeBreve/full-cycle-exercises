@@ -5,6 +5,7 @@ import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.category.CategoryGateway;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.exceptions.DomainException;
+import com.felipe.category.domain.exceptions.NotFoundException;
 import com.felipe.category.domain.validation.Error;
 import com.felipe.category.domain.validation.handler.Notification;
 import io.vavr.API;
@@ -38,7 +39,7 @@ public class DefaultUpdateCategoryUseCase extends UpdateCategoryUseCase {
     }
 
     private Supplier<DomainException> notFound(final CategoryID anId) {
-        return () -> DomainException.with(new Error("Category with ID %s was not found".formatted(anId.getValue())));
+        return () -> NotFoundException.with(Category.class, anId);
     }
 
     private Either<Notification, UpdateCategoryOutput> update(Category aCategory) {

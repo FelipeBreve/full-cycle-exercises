@@ -1,4 +1,4 @@
-package com.felipe.category.infrastructure.configuration;
+package com.felipe.category.infrastructure.configuration.usecases;
 
 import com.felipe.category.application.category.create.CreateCategoryUseCase;
 import com.felipe.category.application.category.create.DefaultCreateCategoryUseCase;

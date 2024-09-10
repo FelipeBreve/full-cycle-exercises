@@ -1,8 +1,10 @@
 package com.felipe.category.application.category.retrieve.get;
 
+import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.category.CategoryGateway;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.exceptions.DomainException;
+import com.felipe.category.domain.exceptions.NotFoundException;
 import com.felipe.category.domain.validation.Error;
 
 import java.util.Objects;
@@ -26,7 +28,7 @@ public class DefaultGetCategoryByIdUseCase extends GetCategoryByIdUseCase {
                 .orElseThrow(notFound(anCategoryId));
     }
 
-    private Supplier<DomainException> notFound(final CategoryID anId) {
-        return () -> DomainException.with(new Error("Category with ID %s was not found".formatted(anId.getValue())));
+    private Supplier<NotFoundException> notFound(final CategoryID anId) {
+        return () -> NotFoundException.with(Category.class, anId);
     }
 }

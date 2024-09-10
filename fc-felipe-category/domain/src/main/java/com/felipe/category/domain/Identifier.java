@@ -1,4 +1,6 @@
 package com.felipe.category.domain;
 
-public class Identifier extends ValueObject {
+public abstract class Identifier extends ValueObject {
+
+    public abstract String getValue();
 }
