@@ -42,13 +42,12 @@ public interface CategoryAPI {
             @RequestParam(name = "search", required = false, defaultValue = "") final String search,
             @RequestParam(name = "page", required = false, defaultValue = "0") final int page,
             @RequestParam(name = "perPage", required = false, defaultValue = "10") final int perPage,
-            @RequestParam(name = "sort", required = false, defaultValue = "") final String sort,
-            @RequestParam(name = "dir", required = false, defaultValue = "") final String direction
+            @RequestParam(name = "sort", required = false, defaultValue = "name") final String sort,
+            @RequestParam(name = "dir", required = false, defaultValue = "asc") final String direction
     );
 
     @GetMapping(
             value = "/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ApiResponses(value = {
@@ -71,9 +70,7 @@ public interface CategoryAPI {
     ResponseEntity<?> updateById(@PathVariable(name = "id") final String id, @RequestBody UpdateCategoryRequest input);
 
     @DeleteMapping(
-            value = "/{id}",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            value = "/{id}"
     )
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiResponses(value = {
