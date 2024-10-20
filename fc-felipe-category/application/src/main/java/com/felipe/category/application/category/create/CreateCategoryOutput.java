@@ -1,7 +1,6 @@
 package com.felipe.category.application.category.create;
 
 import com.felipe.category.domain.category.Category;
-import com.felipe.category.domain.category.CategoryID;
 
 public record CreateCategoryOutput(
         String id

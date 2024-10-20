@@ -79,7 +79,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
     }
 
     @Override
-    public List<CategoryID> existsByIds(final Iterator<CategoryID> ids) {
+    public List<CategoryID> existsByIds(Iterable<CategoryID> ids) {
         return Collections.emptyList();
     }
 
