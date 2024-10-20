@@ -1,7 +1,10 @@
 package com.felipe.category.domain.category;
 
+import com.felipe.category.domain.pagination.SearchQuery;
 import com.felipe.category.domain.pagination.Pagination;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 public interface CategoryGateway {
@@ -14,6 +17,7 @@ public interface CategoryGateway {
 
     Category update(Category aCategory);
 
-    Pagination<Category> findAll(CategorySearchQuery aQuery);
+    Pagination<Category> findAll(SearchQuery aQuery);
 
+    List<CategoryID> existsByIds(Iterable<CategoryID> ids);
 }

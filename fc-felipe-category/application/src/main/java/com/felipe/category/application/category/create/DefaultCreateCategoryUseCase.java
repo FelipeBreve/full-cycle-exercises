@@ -29,7 +29,7 @@ public class DefaultCreateCategoryUseCase extends CreateCategoryUseCase {
         final var aCategory = Category.newCategory(aName, aDescription, isActive);
         aCategory.validate(notification);
 
-        return notification.hasErrors() ? API.Left(notification) : create(aCategory);
+        return notification.hasError() ? API.Left(notification) : create(aCategory);
     }
 
     //Either (Vem do conceito da programacao funcional)

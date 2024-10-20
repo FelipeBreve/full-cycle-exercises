@@ -1,5 +1,6 @@
 package com.felipe.category.application.category.create;
 
+import com.felipe.category.application.UseCaseTest;
 import com.felipe.category.application.category.create.CreateCategoryCommand;
 import com.felipe.category.application.category.create.DefaultCreateCategoryUseCase;
 import com.felipe.category.domain.category.CategoryGateway;
@@ -12,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Objects;
 
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
@@ -20,8 +22,7 @@ import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
-public class CreateCategoryUseCaseTest {
+public class CreateCategoryUseCaseTest extends UseCaseTest {
 
     @InjectMocks
     private DefaultCreateCategoryUseCase useCase;
@@ -29,15 +30,15 @@ public class CreateCategoryUseCaseTest {
     @Mock
     private CategoryGateway categoryGateway;
 
-    @BeforeEach
-    void cleanUp() {
-        Mockito.reset(categoryGateway);
-    }
-
     // 1. Teste do caminho feliz
     // 2. Teste passando uma propriedade inválida (name)
     // 3. Teste criando uma categoria inativa
     // 4. Teste simulando um erro generico vindo do gateway
+
+    @Override
+    protected List<Object> getMocks() {
+        return List.of(categoryGateway);
+    }
 
     @Test
     public void givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId() {

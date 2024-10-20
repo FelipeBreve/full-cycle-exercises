@@ -3,17 +3,16 @@ package com.felipe.category.infrastructure.category;
 import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.category.CategoryGateway;
 import com.felipe.category.domain.category.CategoryID;
-import com.felipe.category.domain.category.CategorySearchQuery;
+import com.felipe.category.domain.pagination.SearchQuery;
 import com.felipe.category.domain.pagination.Pagination;
 import com.felipe.category.infrastructure.category.persistence.CategoryJpaEntity;
 import com.felipe.category.infrastructure.category.persistence.CategoryRepository;
-import com.felipe.category.infrastructure.utils.SpecificationUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.*;
 
 import static com.felipe.category.infrastructure.utils.SpecificationUtils.like;
 
@@ -52,7 +51,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
     }
 
     @Override
-    public Pagination<Category> findAll(final CategorySearchQuery aQuery) {
+    public Pagination<Category> findAll(final SearchQuery aQuery) {
         // Paginacao
         final var page = PageRequest.of(
                 aQuery.page(),
@@ -77,6 +76,11 @@ public class CategoryMySQLGateway implements CategoryGateway {
                 pageResult.getTotalElements(),
                 pageResult.map(CategoryJpaEntity::toAggregate).toList()
         );
+    }
+
+    @Override
+    public List<CategoryID> existsByIds(final Iterator<CategoryID> ids) {
+        return Collections.emptyList();
     }
 
     private Category save(final Category aCategory) {

@@ -9,7 +9,7 @@ import com.felipe.category.application.category.retrieve.list.ListCategoryByIdUs
 import com.felipe.category.application.category.update.UpdateCategoryCommand;
 import com.felipe.category.application.category.update.UpdateCategoryOutput;
 import com.felipe.category.application.category.update.UpdateCategoryUseCase;
-import com.felipe.category.domain.category.CategorySearchQuery;
+import com.felipe.category.domain.pagination.SearchQuery;
 import com.felipe.category.domain.pagination.Pagination;
 import com.felipe.category.domain.validation.handler.Notification;
 import com.felipe.category.infrastructure.api.CategoryAPI;
@@ -76,7 +76,7 @@ public class CategoryController implements CategoryAPI {
             final String sort,
             final String direction) {
         return this.listCategoryByIdUseCase
-                .execute(new CategorySearchQuery(page, perPage, search, sort, direction))
+                .execute(new SearchQuery(page, perPage, search, sort, direction))
                 .map(CategoryApiPresenter::present);
     }
 

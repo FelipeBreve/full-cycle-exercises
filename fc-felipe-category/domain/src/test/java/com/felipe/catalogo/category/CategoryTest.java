@@ -1,3 +1,5 @@
+package com.felipe.catalogo.category;
+
 import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.exceptions.DomainException;
 import com.felipe.category.domain.validation.handler.ThrowsValidationHandler;

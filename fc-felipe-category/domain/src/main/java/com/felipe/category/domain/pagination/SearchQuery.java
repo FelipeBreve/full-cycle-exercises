@@ -1,6 +1,6 @@
-package com.felipe.category.domain.category;
+package com.felipe.category.domain.pagination;
 
-public record CategorySearchQuery(
+public record SearchQuery(
         int page,
         int perPage,
         String terms,

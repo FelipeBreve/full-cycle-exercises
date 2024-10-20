@@ -35,7 +35,7 @@ public class DefaultUpdateCategoryUseCase extends UpdateCategoryUseCase {
         final var notification = Notification.create();
         aCategory.update(aName, aDescription, isActive).validate(notification);
 
-        return notification.hasErrors() ? API.Left(notification) : update(aCategory);
+        return notification.hasError() ? API.Left(notification) : update(aCategory);
     }
 
     private Supplier<DomainException> notFound(final CategoryID anId) {

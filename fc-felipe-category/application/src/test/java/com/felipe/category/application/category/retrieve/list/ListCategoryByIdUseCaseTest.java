@@ -1,8 +1,9 @@
 package com.felipe.category.application.category.retrieve.list;
 
+import com.felipe.category.application.UseCaseTest;
 import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.category.CategoryGateway;
-import com.felipe.category.domain.category.CategorySearchQuery;
+import com.felipe.category.domain.pagination.SearchQuery;
 import com.felipe.category.domain.pagination.Pagination;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,8 +19,7 @@ import java.util.List;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
-public class ListCategoryByIdUseCaseTest {
+public class ListCategoryByIdUseCaseTest extends UseCaseTest {
 
     @InjectMocks
     private DefaultListCategoryByIdUseCase useCase;
@@ -27,9 +27,9 @@ public class ListCategoryByIdUseCaseTest {
     @Mock
     private CategoryGateway categoryGateway;
 
-    @BeforeEach
-    void cleanUp() {
-        Mockito.reset(categoryGateway);
+    @Override
+    protected List<Object> getMocks() {
+        return List.of(categoryGateway);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class ListCategoryByIdUseCaseTest {
         final var expectedSort = "createdAt";
         final var expectedDirection = "asc";
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
@@ -78,7 +78,7 @@ public class ListCategoryByIdUseCaseTest {
         final var expectedSort = "createdAt";
         final var expectedDirection = "asc";
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
@@ -109,7 +109,7 @@ public class ListCategoryByIdUseCaseTest {
         final var expectedDirection = "asc";
         final var expectedErrorMessage = "Gateway error";
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 

@@ -2,7 +2,7 @@ package com.felipe.category.application.category.retrieve.list;
 
 import com.felipe.category.IntegrationTest;
 import com.felipe.category.domain.category.Category;
-import com.felipe.category.domain.category.CategorySearchQuery;
+import com.felipe.category.domain.pagination.SearchQuery;
 import com.felipe.category.infrastructure.category.persistence.CategoryJpaEntity;
 import com.felipe.category.infrastructure.category.persistence.CategoryRepository;
 import org.junit.jupiter.api.Assertions;
@@ -55,7 +55,7 @@ public class ListCategoriesUseCaseIT {
         final var expectedItemsCount = 0;
         final var expectedTotal = 0;
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
@@ -91,7 +91,7 @@ public class ListCategoriesUseCaseIT {
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
         final var actualResult = useCase.execute(aQuery);
 
         Assertions.assertEquals(expectedItemsCount, actualResult.items().size());
@@ -122,7 +122,7 @@ public class ListCategoriesUseCaseIT {
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var actualResult = useCase.execute(aQuery);
 
@@ -154,7 +154,7 @@ public class ListCategoriesUseCaseIT {
 //        final var aQuery =
 //                new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
-        final var aQuery = new CategorySearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
+        final var aQuery = new SearchQuery(expectedPage, expectedPerPage, expectedTerms, expectedSort, expectedDirection);
 
         final var actualResult = useCase.execute(aQuery);
 
