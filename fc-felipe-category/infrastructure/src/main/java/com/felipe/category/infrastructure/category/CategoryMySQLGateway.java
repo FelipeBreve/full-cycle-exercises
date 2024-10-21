@@ -10,13 +10,13 @@ import com.felipe.category.infrastructure.category.persistence.CategoryRepositor
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 import static com.felipe.category.infrastructure.utils.SpecificationUtils.like;
 
-@Service
+@Component
 public class CategoryMySQLGateway implements CategoryGateway {
 
     private final CategoryRepository repository;
@@ -62,11 +62,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
         //Busca dinamica
         final var specification = Optional.ofNullable(aQuery.terms())
                 .filter(str -> !str.isBlank())
-                .map(str -> {
-                    final Specification<CategoryJpaEntity> nameLike = like("name", str);
-                    final Specification<CategoryJpaEntity> descriptionLike = like("description", str);
-                    return nameLike.or(descriptionLike);
-                })
+                .map(this::assembleSpecification)
                 .orElse(null);
 
         final var pageResult = this.repository.findAll(Specification.where(specification), page);
@@ -87,5 +83,11 @@ public class CategoryMySQLGateway implements CategoryGateway {
         return this.repository
                 .save(CategoryJpaEntity.from(aCategory))
                 .toAggregate();
+    }
+
+    private Specification<CategoryJpaEntity> assembleSpecification(final String str) {
+        final Specification<CategoryJpaEntity> nameLike = like("name", str);
+        final Specification<CategoryJpaEntity> descriptionLike = like("description", str);
+        return nameLike.or(descriptionLike);
     }
 }
