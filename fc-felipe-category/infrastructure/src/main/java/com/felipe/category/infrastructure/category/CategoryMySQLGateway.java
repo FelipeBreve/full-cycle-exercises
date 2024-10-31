@@ -13,6 +13,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.stream.StreamSupport;
 
 import static com.felipe.category.infrastructure.utils.SpecificationUtils.like;
 
@@ -75,8 +76,14 @@ public class CategoryMySQLGateway implements CategoryGateway {
     }
 
     @Override
-    public List<CategoryID> existsByIds(Iterable<CategoryID> ids) {
-        return Collections.emptyList();
+    public List<CategoryID> existsByIds(Iterable<CategoryID> categoryIDs) {
+        final var ids = StreamSupport.stream(categoryIDs.spliterator(), false)
+                .map(CategoryID::getValue)
+                .toList();
+        return this.repository.existsByIds(ids)
+                .stream()
+                .map(CategoryID::from)
+                .toList();
     }
 
     private Category save(final Category aCategory) {

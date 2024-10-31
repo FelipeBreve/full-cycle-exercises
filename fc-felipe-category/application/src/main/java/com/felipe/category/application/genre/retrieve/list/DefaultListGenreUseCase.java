@@ -16,8 +16,7 @@ public class DefaultListGenreUseCase extends ListGenreUseCase {
 
     @Override
     public Pagination<GenreListOutput> execute(final SearchQuery aQuery) {
-//        return this.genreGateway.findAll(aQuery)
-//                .map(GenreListOutput::from);
-        return null;
+        return this.genreGateway.findAll(aQuery)
+                .map(GenreListOutput::from);
     }
 }
