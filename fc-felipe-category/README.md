@@ -226,3 +226,14 @@ docker compose --profile app stop
                            jwk-set-uri: ${keycloak.host}/realms/${keycloak.realm}/protocol/openid-connect/certs
                            issuer-uri: ${keycloak.host}/realms/${keycloak.realm}
    ```
+   
+### Bonus
+problema com o Docker no ambiente do Linux do WSL:
+root:/etc/docker# tail daemon.json
+{
+"hosts": [
+"unix:///var/run/docker.sock",
+"tcp://172.17.64.234:2375"
+]
+}
+root:/etc/docker#

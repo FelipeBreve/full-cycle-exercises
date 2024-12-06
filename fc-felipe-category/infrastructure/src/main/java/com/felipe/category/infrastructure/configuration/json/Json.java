@@ -21,7 +21,7 @@ public enum Json {
         return invoke(() -> INSTENCE.mapper.writeValueAsString(obj));
     }
 
-    public <T> T readValue(final String json, final Class<T> clazz) {
+    public static <T> T readValue(final String json, final Class<T> clazz) {
         return invoke(() -> INSTENCE.mapper.readValue(json, clazz));
     }
 
