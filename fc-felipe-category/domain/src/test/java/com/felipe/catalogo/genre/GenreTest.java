@@ -251,7 +251,7 @@ public class GenreTest {
     }
 
     @Test
-    public void givenAValidEmptyCategoriesGenre_whenCallAddCategory_shouldReceiveOK() {
+    public void givenAValidEmptyCategoriesGenre_whenCallAddCategory_shouldReceiveOK() throws InterruptedException {
         final var seriesID = CategoryID.from("123");
         final var moviesID = CategoryID.from("456");
 
@@ -265,6 +265,8 @@ public class GenreTest {
 
         final var actualCreatedAt = actualGenre.getCreatedAt();
         final var actualUpdatedAt = actualGenre.getUpdatedAt();
+
+        Thread.sleep(1000);
 
         actualGenre.addCategory(seriesID);
         actualGenre.addCategory(moviesID);
@@ -361,7 +363,7 @@ public class GenreTest {
     }
 
     @Test
-    public void givenAValidEmptyCategoriesGenre_whenCallAddCategories_shouldReceiveOK() {
+    public void givenAValidEmptyCategoriesGenre_whenCallAddCategories_shouldReceiveOK() throws InterruptedException {
         final var seriesID = CategoryID.from("123");
         final var moviesID = CategoryID.from("456");
 
@@ -375,6 +377,8 @@ public class GenreTest {
 
         final var actualCreatedAt = actualGenre.getCreatedAt();
         final var actualUpdatedAt = actualGenre.getUpdatedAt();
+
+        Thread.sleep(1000);
 
         actualGenre.addCategories(expectedCategories);
 
