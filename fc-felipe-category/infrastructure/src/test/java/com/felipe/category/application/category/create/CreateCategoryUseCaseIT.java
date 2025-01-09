@@ -22,6 +22,8 @@ public class CreateCategoryUseCaseIT {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    // Esse cara seria como um espiao, porem ele nao precisa necessariamente alterar a funcionalidade (a nao ser se quisesse)
+    // Ele serve para verificar se um metodo foi chamado, quantas vezes foi chamado, etc
     @SpyBean
     private CategoryGateway categoryGateway;
 
