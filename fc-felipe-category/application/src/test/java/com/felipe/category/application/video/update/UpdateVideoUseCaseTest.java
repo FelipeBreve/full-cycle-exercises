@@ -1,6 +1,6 @@
 package com.felipe.category.application.video.update;
 
-import com.felipe.category.application.Fixture;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.application.UseCaseTest;
 import com.felipe.category.domain.castmember.CastMemberGateway;
 import com.felipe.category.domain.castmember.CastMemberID;

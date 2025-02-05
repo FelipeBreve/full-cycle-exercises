@@ -1,6 +1,6 @@
 package com.felipe.category.application.video.retrieve.list;
 
-import com.felipe.category.application.Fixture;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.application.UseCaseTest;
 import com.felipe.category.application.genre.retrieve.list.GenreListOutput;
 import com.felipe.category.domain.pagination.Pagination;

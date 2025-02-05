@@ -10,13 +10,11 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain"))
-    // https://mvnrepository.com/artifact/io.vavr/vavr
+    implementation project(":domain")
+
+    testImplementation(project(path: ':domain', configuration: 'testClasses'))
+
     implementation 'io.vavr:vavr:0.10.4'
-
-    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
-    testImplementation 'com.github.javafaker:javafaker:1.0.2'
-
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'

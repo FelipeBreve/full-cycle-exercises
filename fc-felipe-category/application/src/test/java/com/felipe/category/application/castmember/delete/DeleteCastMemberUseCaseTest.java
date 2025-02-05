@@ -1,6 +1,6 @@
 package com.felipe.category.application.castmember.delete;
 
-import com.felipe.category.application.Fixture;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.application.UseCaseTest;
 import com.felipe.category.domain.castmember.CastMember;
 import com.felipe.category.domain.castmember.CastMemberGateway;

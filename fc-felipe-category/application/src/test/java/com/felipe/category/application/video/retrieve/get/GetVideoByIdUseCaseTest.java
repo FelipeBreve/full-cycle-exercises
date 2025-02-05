@@ -1,6 +1,6 @@
 package com.felipe.category.application.video.retrieve.get;
 
-import com.felipe.category.application.Fixture;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.application.UseCaseTest;
 import com.felipe.category.domain.exceptions.NotFoundException;
 import com.felipe.category.domain.video.Video;
@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.felipe.category.application.Fixture.Videos.audioVideo;
-import static com.felipe.category.application.Fixture.Videos.image;
+import static com.felipe.category.domain.Fixture.Videos.audioVideo;
+import static com.felipe.category.domain.Fixture.Videos.image;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
