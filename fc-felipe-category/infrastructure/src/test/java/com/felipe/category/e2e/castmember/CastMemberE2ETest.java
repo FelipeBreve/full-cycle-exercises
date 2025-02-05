@@ -1,7 +1,7 @@
 package com.felipe.category.e2e.castmember;
 
 import com.felipe.category.E2ETest;
-import com.felipe.category.Fixture;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.domain.castmember.CastMemberID;
 import com.felipe.category.domain.castmember.CastMemberType;
 import com.felipe.category.e2e.MockDsl;

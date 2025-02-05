@@ -2,7 +2,6 @@ package com.felipe.category.infrastructure.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.felipe.category.ControllerTest;
-import com.felipe.category.Fixture;
 import com.felipe.category.application.castmember.create.CreateCastMemberOutput;
 import com.felipe.category.application.castmember.create.DefaultCreateCastMemberUseCase;
 import com.felipe.category.application.castmember.delete.DefaultDeleteCastMemberUseCase;
@@ -12,6 +11,7 @@ import com.felipe.category.application.castmember.retrieve.list.CastMemberListOu
 import com.felipe.category.application.castmember.retrieve.list.DefaultListCastMembersUseCase;
 import com.felipe.category.application.castmember.update.DefaultUpdateCastMemberUseCase;
 import com.felipe.category.application.castmember.update.UpdateCastMemberOutput;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.domain.castmember.CastMember;
 import com.felipe.category.domain.castmember.CastMemberID;
 import com.felipe.category.domain.castmember.CastMemberType;

@@ -6,7 +6,7 @@ import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.genre.Genre;
 import com.felipe.category.domain.utils.IdUtils;
 import com.felipe.category.domain.video.*;
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 
 import java.time.Year;
 import java.util.Set;

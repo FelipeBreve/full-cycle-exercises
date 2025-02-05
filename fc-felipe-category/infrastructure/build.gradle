@@ -32,12 +32,14 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":application"))
 
-    implementation 'io.vavr:vavr:0.10.4'
+    testImplementation(project(path: ':domain', configuration: 'testClasses'))
 
-    // Esse foi utilizado pois o outro estava apresentando problema na etapa:
-    // Infrastructure cast-member: Implementando o método create do gateway de castmember
-    // https://mvnrepository.com/artifact/net.datafaker/datafaker
-    implementation 'net.datafaker:datafaker:2.0.2'
+    implementation 'io.vavr:vavr:0.10.4'
+////
+////    // Esse foi utilizado pois o outro estava apresentando problema na etapa:
+////    // Infrastructure cast-member: Implementando o método create do gateway de castmember
+////    // https://mvnrepository.com/artifact/net.datafaker/datafaker
+//    implementation 'net.datafaker:datafaker:2.0.2'
 
 
     testImplementation platform('org.junit:junit-bom:5.10.0')

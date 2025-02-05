@@ -1,7 +1,7 @@
 package com.felipe.category.infrastructure.castmember.models;
 
-import com.felipe.category.Fixture;
 import com.felipe.category.JacksonTest;
+import com.felipe.category.domain.Fixture;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

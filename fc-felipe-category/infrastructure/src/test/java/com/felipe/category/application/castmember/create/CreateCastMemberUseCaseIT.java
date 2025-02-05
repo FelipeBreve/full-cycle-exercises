@@ -1,7 +1,7 @@
 package com.felipe.category.application.castmember.create;
 
-import com.felipe.category.Fixture;
 import com.felipe.category.IntegrationTest;
+import com.felipe.category.domain.Fixture;
 import com.felipe.category.domain.castmember.CastMemberGateway;
 import com.felipe.category.domain.castmember.CastMemberType;
 import com.felipe.category.domain.exceptions.NotificationException;
