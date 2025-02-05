@@ -1,6 +1,5 @@
 package com.felipe.category.domain.genre;
 
-import com.felipe.category.domain.category.Category;
 import com.felipe.category.domain.validation.Error;
 import com.felipe.category.domain.validation.ValidationHandler;
 import com.felipe.category.domain.validation.Validator;

@@ -1,6 +1,7 @@
 package com.felipe.category.domain.castmember;
 
 import com.felipe.category.domain.Identifier;
+import com.felipe.category.domain.utils.IdUtils;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -15,7 +16,7 @@ public class CastMemberID extends Identifier {
     }
 
     public static CastMemberID unique() {
-        return CastMemberID.from(UUID.randomUUID().toString());
+        return CastMemberID.from(IdUtils.uuid());
     }
 
     public static CastMemberID from(final String anId) {

@@ -1,5 +1,3 @@
-package com.felipe.category.application;
-
 import com.felipe.category.domain.castmember.CastMember;
 import com.felipe.category.domain.castmember.CastMemberType;
 import com.felipe.category.domain.category.Category;
@@ -10,7 +8,6 @@ import com.github.javafaker.Faker;
 
 import java.time.Year;
 import java.util.Set;
-import java.util.UUID;
 
 import static io.vavr.API.*;
 
