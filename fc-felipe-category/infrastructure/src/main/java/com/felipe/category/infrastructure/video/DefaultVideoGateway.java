@@ -75,13 +75,12 @@ public class DefaultVideoGateway implements VideoGateway {
                 page
         );
 
-//        return new Pagination<>(
-//                actualPage.getNumber(),
-//                actualPage.getSize(),
-//                actualPage.getTotalElements(),
-//                actualPage.toList()
-//        );
-        return null;
+        return new Pagination<>(
+                actualPage.getNumber(),
+                actualPage.getSize(),
+                actualPage.getTotalElements(),
+                actualPage.toList()
+        );
     }
 
     private Video save(final Video aVideo) {
