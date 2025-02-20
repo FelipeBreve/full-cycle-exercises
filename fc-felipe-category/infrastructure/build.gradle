@@ -35,6 +35,14 @@ dependencies {
     testImplementation(project(path: ':domain', configuration: 'testClasses'))
 
     implementation 'io.vavr:vavr:0.10.4'
+
+    // https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage
+    implementation group: 'com.google.cloud', name: 'google-cloud-storage', version: '2.48.1'
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation group: 'com.google.guava', name: 'guava', version: '33.4.0-jre'
+
+
 ////
 ////    // Esse foi utilizado pois o outro estava apresentando problema na etapa:
 ////    // Infrastructure cast-member: Implementando o método create do gateway de castmember
