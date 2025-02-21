@@ -1,7 +1,5 @@
 package com.felipe.category.domain.castmember;
 
-import com.felipe.category.domain.castmember.CastMember;
-import com.felipe.category.domain.castmember.CastMemberType;
 import com.felipe.category.domain.exceptions.NotificationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

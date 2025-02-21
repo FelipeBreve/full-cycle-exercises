@@ -4,7 +4,6 @@ import com.felipe.category.domain.AggregateRoot;
 import com.felipe.category.domain.Identifier;
 import com.felipe.category.domain.validation.Error;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,5 +21,9 @@ public class NotFoundException extends DomainException {
                 anAggreagateRoot.getSimpleName(),
                 id.getValue());
         return new NotFoundException(anError, Collections.emptyList());
+    }
+
+    public static NotFoundException with(final Error error) {
+        return new NotFoundException(error.message(), List.of(error));
     }
 }
