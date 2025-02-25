@@ -22,14 +22,14 @@ import static com.felipe.category.domain.utils.CollectionUtils.nullIfEmpty;
 @Component
 public class DefaultVideoGateway implements VideoGateway {
 
-//    private final EventService eventService;
+    private final EventService eventService;
     private final VideoRepository videoRepository;
 
     public DefaultVideoGateway(
-//            @VideoCreatedQueue final EventService eventService,
+            @VideoCreatedQueue final EventService eventService,
             final VideoRepository videoRepository
     ) {
-//        this.eventService = Objects.requireNonNull(eventService);
+        this.eventService = Objects.requireNonNull(eventService);
         this.videoRepository = Objects.requireNonNull(videoRepository);
     }
 
