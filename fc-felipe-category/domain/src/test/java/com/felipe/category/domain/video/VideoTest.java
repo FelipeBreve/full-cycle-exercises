@@ -3,11 +3,8 @@ package com.felipe.category.domain.video;
 import com.felipe.category.domain.castmember.CastMemberID;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.genre.GenreID;
+import com.felipe.category.domain.utils.InstantUtils;
 import com.felipe.category.domain.validation.handler.ThrowsValidationHandler;
-import com.felipe.category.domain.video.AudioVideoMedia;
-import com.felipe.category.domain.video.ImageMedia;
-import com.felipe.category.domain.video.Rating;
-import com.felipe.category.domain.video.Video;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -72,9 +69,9 @@ public class VideoTest
         Assertions.assertTrue(actualVideo.getBanner().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());
-//        Assertions.assertTrue(actualVideo.getDomainEvents().isEmpty());
+        Assertions.assertTrue(actualVideo.getDomainEvents().isEmpty());
 
-//        Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
+        Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
 
     @Test
@@ -92,7 +89,7 @@ public class VideoTest
         final var expectedOpened = false;
         final var expectedPublished = false;
         final var expectedRating = Rating.L;
-//        final var expectedEvent = new VideoMediaCreated("ID", "file");
+        final var expectedEvent = new VideoMediaCreated("ID", "file");
         final var expectedEventCount = 1;
         final var expectedCategories = Set.of(CategoryID.unique());
         final var expectedGenres = Set.of(GenreID.unique());
@@ -111,9 +108,10 @@ public class VideoTest
                 Set.of()
         );
 
-//        aVideo.registerEvent(expectedEvent);
+        aVideo.registerEvent(expectedEvent);
 
-        Thread.sleep(500);
+        Thread.sleep(100);
+
         // when
         final var actualVideo = Video.with(aVideo).update(
                 expectedTitle,
@@ -149,12 +147,12 @@ public class VideoTest
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());
 
-//        Assertions.assertEquals(expectedEventCount, actualVideo.getDomainEvents().size());
-//        Assertions.assertEquals(expectedEvent, actualVideo.getDomainEvents().get(0));
-//
-//        Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
+        Assertions.assertEquals(expectedEventCount, actualVideo.getDomainEvents().size());
+        Assertions.assertEquals(expectedEvent, actualVideo.getDomainEvents().get(0));
+
+        Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
-//
+
     @Test
     public void givenValidVideo_whenCallsUpdateVideoMedia_shouldReturnUpdated() throws InterruptedException {
         // given
@@ -191,7 +189,8 @@ public class VideoTest
         final var aVideoMedia =
                 AudioVideoMedia.with("abc", "Video.mp4", "/123/videos");
 
-        Thread.sleep(500);
+        Thread.sleep(100);
+
         // when
         final var actualVideo = Video.with(aVideo).updateVideoMedia(aVideoMedia);
 
@@ -216,18 +215,18 @@ public class VideoTest
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());
 
-//        Assertions.assertEquals(expectedDomainEventSize, actualVideo.getDomainEvents().size());
+        Assertions.assertEquals(expectedDomainEventSize, actualVideo.getDomainEvents().size());
 
-//        final var actualEvent = (VideoMediaCreated) actualVideo.getDomainEvents().get(0);
-//        Assertions.assertEquals(aVideo.getId().getValue(), actualEvent.resourceId());
-//        Assertions.assertEquals(aVideoMedia.rawLocation(), actualEvent.filePath());
-//        Assertions.assertNotNull(actualEvent.occurredOn());
+        final var actualEvent = (VideoMediaCreated) actualVideo.getDomainEvents().get(0);
+        Assertions.assertEquals(aVideo.getId().getValue(), actualEvent.resourceId());
+        Assertions.assertEquals(aVideoMedia.rawLocation(), actualEvent.filePath());
+        Assertions.assertNotNull(actualEvent.occurredOn());
 
         Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
-//
+
     @Test
-    public void givenValidVideo_whenCallsUpdateTrailerMedia_shouldReturnUpdated() throws InterruptedException {
+    public void givenValidVideo_whenCallsUpdateTrailerMedia_shouldReturnUpdated() {
         // given
         final var expectedTitle = "System Design Interviews";
         final var expectedDescription = """
@@ -263,7 +262,6 @@ public class VideoTest
                 AudioVideoMedia.with("abc", "Trailer.mp4", "/123/videos");
 
         // when
-        Thread.sleep(500);
         final var actualVideo = Video.with(aVideo).updateTrailerMedia(aTrailerMedia);
 
         // then
@@ -287,18 +285,18 @@ public class VideoTest
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());
 
-//        Assertions.assertEquals(expectedDomainEventSize, actualVideo.getDomainEvents().size());
-//
-//        final var actualEvent = (VideoMediaCreated) actualVideo.getDomainEvents().get(0);
-//        Assertions.assertEquals(aVideo.getId().getValue(), actualEvent.resourceId());
-//        Assertions.assertEquals(aTrailerMedia.rawLocation(), actualEvent.filePath());
-//        Assertions.assertNotNull(actualEvent.occurredOn());
+        Assertions.assertEquals(expectedDomainEventSize, actualVideo.getDomainEvents().size());
+
+        final var actualEvent = (VideoMediaCreated) actualVideo.getDomainEvents().get(0);
+        Assertions.assertEquals(aVideo.getId().getValue(), actualEvent.resourceId());
+        Assertions.assertEquals(aTrailerMedia.rawLocation(), actualEvent.filePath());
+        Assertions.assertNotNull(actualEvent.occurredOn());
 
         Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
 
     @Test
-    public void givenValidVideo_whenCallsUpdateBannerMedia_shouldReturnUpdated() throws InterruptedException {
+    public void givenValidVideo_whenCallsUpdateBannerMedia_shouldReturnUpdated() {
         // given
         final var expectedTitle = "System Design Interviews";
         final var expectedDescription = """
@@ -332,7 +330,6 @@ public class VideoTest
         final var aBannerMedia =
                 ImageMedia.with("abc", "Trailer.mp4", "/123/videos");
 
-        Thread.sleep(500);
         // when
         final var actualVideo = Video.with(aVideo).updateBannerMedia(aBannerMedia);
 
@@ -395,7 +392,8 @@ public class VideoTest
         final var aThumbMedia =
                 ImageMedia.with("abc", "Trailer.mp4", "/123/videos");
 
-        Thread.sleep(500);
+        Thread.sleep(100);
+
         // when
         final var actualVideo = Video.with(aVideo).updateThumbnailMedia(aThumbMedia);
 
@@ -424,7 +422,7 @@ public class VideoTest
     }
 
     @Test
-    public void givenValidVideo_whenCallsUpdateThumbnailHalfMedia_shouldReturnUpdated() throws InterruptedException {
+    public void givenValidVideo_whenCallsUpdateThumbnailHalfMedia_shouldReturnUpdated() {
         // given
         final var expectedTitle = "System Design Interviews";
         final var expectedDescription = """
@@ -459,7 +457,6 @@ public class VideoTest
                 ImageMedia.with("abc", "Trailer.mp4", "/123/videos");
 
         // when
-        Thread.sleep(500);
         final var actualVideo = Video.with(aVideo).updateThumbnailHalfMedia(aThumbMedia);
 
         // then
@@ -485,49 +482,49 @@ public class VideoTest
 
         Assertions.assertDoesNotThrow(() -> actualVideo.validate(new ThrowsValidationHandler()));
     }
-//
-//    @Test
-//    public void givenValidVideo_whenCallsWith_shouldCreateWithoutEvents() {
-//        // given
-//        final var expectedTitle = "System Design Interviews";
-//        final var expectedDescription = """
-//                Disclaimer: o estudo de caso apresentado tem fins educacionais e representa nossas opiniões pessoais.
-//                Esse vídeo faz parte da Imersão Full Stack && Full Cycle.
-//                Para acessar todas as aulas, lives e desafios, acesse:
-//                https://imersao.fullcycle.com.br/
-//                """;
-//        final var expectedLaunchedAt = Year.of(2022);
-//        final var expectedDuration = 120.10;
-//        final var expectedOpened = false;
-//        final var expectedPublished = false;
-//        final var expectedRating = Rating.L;
-//        final var expectedCategories = Set.of(CategoryID.unique());
-//        final var expectedGenres = Set.of(GenreID.unique());
-//        final var expectedMembers = Set.of(CastMemberID.unique());
-//
-//        // when
-//        final var actualVideo = Video.with(
-//                VideoID.unique(),
-//                expectedTitle,
-//                expectedDescription,
-//                expectedLaunchedAt,
-//                expectedDuration,
-//                expectedOpened,
-//                expectedPublished,
-//                expectedRating,
-//                InstantUtils.now(),
-//                InstantUtils.now(),
-//                null,
-//                null,
-//                null,
-//                null,
-//                null,
-//                expectedCategories,
-//                expectedGenres,
-//                expectedMembers
-//        );
-//
-//        // then
-//        Assertions.assertNotNull(actualVideo.getDomainEvents());
-//    }
+
+    @Test
+    public void givenValidVideo_whenCallsWith_shouldCreateWithoutEvents() {
+        // given
+        final var expectedTitle = "System Design Interviews";
+        final var expectedDescription = """
+                Disclaimer: o estudo de caso apresentado tem fins educacionais e representa nossas opiniões pessoais.
+                Esse vídeo faz parte da Imersão Full Stack && Full Cycle.
+                Para acessar todas as aulas, lives e desafios, acesse:
+                https://imersao.fullcycle.com.br/
+                """;
+        final var expectedLaunchedAt = Year.of(2022);
+        final var expectedDuration = 120.10;
+        final var expectedOpened = false;
+        final var expectedPublished = false;
+        final var expectedRating = Rating.L;
+        final var expectedCategories = Set.of(CategoryID.unique());
+        final var expectedGenres = Set.of(GenreID.unique());
+        final var expectedMembers = Set.of(CastMemberID.unique());
+
+        // when
+        final var actualVideo = Video.with(
+                VideoID.unique(),
+                expectedTitle,
+                expectedDescription,
+                expectedLaunchedAt,
+                expectedDuration,
+                expectedOpened,
+                expectedPublished,
+                expectedRating,
+                InstantUtils.now(),
+                InstantUtils.now(),
+                null,
+                null,
+                null,
+                null,
+                null,
+                expectedCategories,
+                expectedGenres,
+                expectedMembers
+        );
+
+        // then
+        Assertions.assertNotNull(actualVideo.getDomainEvents());
+    }
 }

@@ -4,6 +4,7 @@ import com.felipe.category.domain.category.Category;
 import com.felipe.category.infrastructure.category.persistence.CategoryJpaEntity;
 import com.felipe.category.infrastructure.category.persistence.CategoryRepository;
 import com.felipe.category.infrastructure.configuration.WebServerConfig;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +19,11 @@ public class Main {
         System.out.println("Hello world!");
         System.setProperty(AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "development");
         SpringApplication.run(WebServerConfig.class, args);
+    }
+
+    @RabbitListener(queues = "video.encoded.queue")
+    public void listen(String in) {
+        System.out.println("Message read from myQueue : " + in);
     }
 
 //    @Bean

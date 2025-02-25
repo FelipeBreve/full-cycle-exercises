@@ -3,6 +3,8 @@ package com.felipe.category.infrastructure.video;
 import com.felipe.category.domain.Identifier;
 import com.felipe.category.domain.pagination.Pagination;
 import com.felipe.category.domain.video.*;
+import com.felipe.category.infrastructure.configuration.annotations.VideoCreatedQueue;
+import com.felipe.category.infrastructure.services.EventService;
 import com.felipe.category.infrastructure.utils.SqlUtils;
 import com.felipe.category.infrastructure.video.persistence.VideoJpaEntity;
 import com.felipe.category.infrastructure.video.persistence.VideoRepository;
