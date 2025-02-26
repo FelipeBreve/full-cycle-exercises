@@ -296,7 +296,7 @@ public class VideoTest
     }
 
     @Test
-    public void givenValidVideo_whenCallsUpdateBannerMedia_shouldReturnUpdated() {
+    public void givenValidVideo_whenCallsUpdateBannerMedia_shouldReturnUpdated() throws InterruptedException {
         // given
         final var expectedTitle = "System Design Interviews";
         final var expectedDescription = """
@@ -329,6 +329,8 @@ public class VideoTest
 
         final var aBannerMedia =
                 ImageMedia.with("abc", "Trailer.mp4", "/123/videos");
+
+        Thread.sleep(100);
 
         // when
         final var actualVideo = Video.with(aVideo).updateBannerMedia(aBannerMedia);
