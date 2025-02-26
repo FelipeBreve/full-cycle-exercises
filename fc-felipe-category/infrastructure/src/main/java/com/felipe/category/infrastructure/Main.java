@@ -21,11 +21,6 @@ public class Main {
         SpringApplication.run(WebServerConfig.class, args);
     }
 
-    @RabbitListener(queues = "video.encoded.queue")
-    public void listen(String in) {
-        System.out.println("Message read from myQueue : " + in);
-    }
-
 //    @Bean
 //    public ApplicationRunner runner(CategoryRepository repository) {
 //        return args -> {
