@@ -1,11 +1,13 @@
 package com.felipe.category.infrastructure.configuration.json;
 
-import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
-import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import java.util.concurrent.Callable;
@@ -41,10 +43,11 @@ public enum Json {
                     DeserializationFeature.FAIL_ON_NULL_CREATOR_PROPERTIES,
                     SerializationFeature.WRITE_DATES_AS_TIMESTAMPS
             )
-            .modules(new JavaTimeModule(), new Jdk8Module(), afterburnerModule())
+            .modules(new JavaTimeModule(), new Jdk8Module())
             .propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
             .build();
 
+    // Codigo nao utilizado mais
     private AfterburnerModule afterburnerModule() {
         var module = new AfterburnerModule();
         // make Afterburner generate bytecode only for public getters/setter and fields
