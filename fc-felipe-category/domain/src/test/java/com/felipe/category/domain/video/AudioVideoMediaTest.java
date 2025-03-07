@@ -1,13 +1,13 @@
 package com.felipe.category.domain.video;
 
+import com.felipe.category.domain.UnitTest;
 import com.felipe.category.domain.utils.IdUtils;
 import com.felipe.category.domain.video.AudioVideoMedia;
 import com.felipe.category.domain.video.MediaStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class AudioVideoMediaTest
-//        extends UnitTest
+class AudioVideoMediaTest extends UnitTest
 {
 
     @Test

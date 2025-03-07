@@ -1,11 +1,11 @@
 package com.felipe.category.domain.video;
 
+import com.felipe.category.domain.UnitTest;
 import com.felipe.category.domain.video.ImageMedia;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class ImageMediaTest
-//        extends UnitTest
+public class ImageMediaTest extends UnitTest
 {
 
     @Test

@@ -1,5 +1,6 @@
 package com.felipe.category.domain.video;
 
+import com.felipe.category.domain.UnitTest;
 import com.felipe.category.domain.castmember.CastMemberID;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.exceptions.DomainException;
@@ -13,8 +14,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Year;
 import java.util.Set;
 
-public class VideoValidatorTest
-//        extends UnitTest
+public class VideoValidatorTest extends UnitTest
 {
 
     @Test

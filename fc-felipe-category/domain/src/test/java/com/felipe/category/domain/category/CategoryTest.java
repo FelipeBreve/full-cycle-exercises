@@ -1,12 +1,12 @@
 package com.felipe.category.domain.category;
 
-import com.felipe.category.domain.category.Category;
+import com.felipe.category.domain.EntityTest;
 import com.felipe.category.domain.exceptions.DomainException;
 import com.felipe.category.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CategoryTest {
+public class CategoryTest extends EntityTest {
 
     @Test
     public void givenAValidParams_whenCallNewCategory_thenInstantiateACategory() {

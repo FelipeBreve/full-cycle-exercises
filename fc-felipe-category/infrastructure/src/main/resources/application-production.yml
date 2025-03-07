@@ -1,8 +1,8 @@
 amqp:
-  host: ${AMQP_RABBIT_HOST}
-  port: ${AMQP_RABBIT_PORT}
-  username: ${AMQP_RABBIT_USERNAME}
-  password: ${AMQP_RABBIT_PASSWORD}
+  host: ${AMQP_RABBIT_HOST:localhost}
+  port: ${AMQP_RABBIT_PORT:5672}
+  username: ${AMQP_RABBIT_USERNAME:adm_videos}
+  password: ${AMQP_RABBIT_PASSWORD:123456}
 
 mysql:
   username: ${DATABASE_MYSQL_USERNAME:root}

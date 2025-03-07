@@ -1,10 +1,11 @@
 package com.felipe.category.domain.castmember;
 
+import com.felipe.category.domain.EntityTest;
 import com.felipe.category.domain.exceptions.NotificationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CastMemberTest {
+public class CastMemberTest extends EntityTest {
 
     @Test
     public void givenAValidParams_whenCallsNewMember_thenInstantiateACastMember() {

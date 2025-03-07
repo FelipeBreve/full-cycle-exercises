@@ -1,5 +1,6 @@
 package com.felipe.category.domain.video;
 
+import com.felipe.category.domain.UnitTest;
 import com.felipe.category.domain.castmember.CastMemberID;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.genre.GenreID;
@@ -11,8 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Year;
 import java.util.Set;
 
-public class VideoTest
-//        extends UnitTest
+public class VideoTest extends UnitTest
 {
 
     @Test
@@ -226,7 +226,7 @@ public class VideoTest
     }
 
     @Test
-    public void givenValidVideo_whenCallsUpdateTrailerMedia_shouldReturnUpdated() {
+    public void givenValidVideo_whenCallsUpdateTrailerMedia_shouldReturnUpdated() throws InterruptedException {
         // given
         final var expectedTitle = "System Design Interviews";
         final var expectedDescription = """
@@ -262,6 +262,7 @@ public class VideoTest
                 AudioVideoMedia.with("abc", "Trailer.mp4", "/123/videos");
 
         // when
+        Thread.sleep(100);
         final var actualVideo = Video.with(aVideo).updateTrailerMedia(aTrailerMedia);
 
         // then
@@ -424,7 +425,7 @@ public class VideoTest
     }
 
     @Test
-    public void givenValidVideo_whenCallsUpdateThumbnailHalfMedia_shouldReturnUpdated() {
+    public void givenValidVideo_whenCallsUpdateThumbnailHalfMedia_shouldReturnUpdated() throws InterruptedException {
         // given
         final var expectedTitle = "System Design Interviews";
         final var expectedDescription = """
@@ -459,6 +460,7 @@ public class VideoTest
                 ImageMedia.with("abc", "Trailer.mp4", "/123/videos");
 
         // when
+        Thread.sleep(100);
         final var actualVideo = Video.with(aVideo).updateThumbnailHalfMedia(aThumbMedia);
 
         // then

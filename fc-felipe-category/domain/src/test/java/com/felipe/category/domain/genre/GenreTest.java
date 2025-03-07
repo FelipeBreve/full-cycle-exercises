@@ -1,6 +1,7 @@
 package com.felipe.category.domain.genre;
 
 
+import com.felipe.category.domain.EntityTest;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.exceptions.NotificationException;
 import com.felipe.category.domain.genre.Genre;
@@ -10,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenreTest {
+public class GenreTest extends EntityTest {
 
     @Test
     public void givenValidParams_whenCallNewGenre_shouldInstantiateAGenre() {

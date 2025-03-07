@@ -20,7 +20,7 @@ import java.util.Base64;
 import java.util.Objects;
 
 @Configuration
-@Profile({"!development & !test-integration & !test-e2e"})
+//@Profile({"!development & !test-integration & !test-e2e"})
 public class GoogleCloudConfig {
 
     @Bean
@@ -38,8 +38,9 @@ public class GoogleCloudConfig {
 
     @Bean
     public Credentials credentials(final GoogleCloudProperties props) throws IOException {
+        final var credentialSenetize = props.getCredentials().replace(" ", "");
         final var jsonBin = Base64.getDecoder()
-                .decode(Objects.requireNonNull(props.getCredentials()));
+                .decode(Objects.requireNonNull(credentialSenetize));
 
         return GoogleCredentials.fromStream(new ByteArrayInputStream(jsonBin));
     }
