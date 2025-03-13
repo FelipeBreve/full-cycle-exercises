@@ -1,6 +1,7 @@
 package com.felipe.category.infrastructure.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.felipe.category.ApiTest;
 import com.felipe.category.ControllerTest;
 import com.felipe.category.application.category.create.CreateCategoryOutput;
 import com.felipe.category.application.category.create.CreateCategoryUseCase;
@@ -75,15 +76,12 @@ public class CategoryAPITest {
         final var aInput =
                 new CreateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
 
-//        final var aInput =
-//                new CreateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
-
         when(createCategoryUseCase.execute(any()))
                 .thenReturn(Right(CreateCategoryOutput.from("123")));
 
         // when
         final var request = post("/categories")
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(this.mapper.writeValueAsString(aInput));
 
@@ -111,8 +109,6 @@ public class CategoryAPITest {
         final var expectedIsActive = true;
         final var expectedMessage = "'name' should not be null";
 
-//        final var aInput =
-//                new CreateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
 
         final var aInput =
                 new CreateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
@@ -122,7 +118,7 @@ public class CategoryAPITest {
 
         // when
         final var request = post("/categories")
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(this.mapper.writeValueAsString(aInput));
 
@@ -151,8 +147,6 @@ public class CategoryAPITest {
         final var expectedIsActive = true;
         final var expectedMessage = "'name' should not be null";
 
-//        final var aInput =
-//                new CreateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
         final var aInput =
                 new CreateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
 
@@ -161,7 +155,7 @@ public class CategoryAPITest {
 
         // when
         final var request = post("/categories")
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(this.mapper.writeValueAsString(aInput));
 
@@ -200,7 +194,7 @@ public class CategoryAPITest {
 
         // when
         final var request = get("/categories/{id}", expectedId)
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -232,7 +226,7 @@ public class CategoryAPITest {
 
         // when
         final var request = get("/categories/{id}", expectedId.getValue())
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -255,15 +249,12 @@ public class CategoryAPITest {
         when(updateCategoryUseCase.execute(any()))
                 .thenReturn(Right(UpdateCategoryOutput.from(expectedId)));
 
-//        final var aCommand =
-//                new UpdateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
-
         final var aCommand =
                 new UpdateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
 
         // when
         final var request = put("/categories/{id}", expectedId)
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(mapper.writeValueAsString(aCommand));
@@ -297,15 +288,12 @@ public class CategoryAPITest {
         when(updateCategoryUseCase.execute(any()))
                 .thenReturn(Left(Notification.create(new Error(expectedMessage))));
 
-//        final var aCommand =
-//                new UpdateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
-
         final var aCommand =
                 new UpdateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
 
         // when
         final var request = put("/categories/{id}", expectedId)
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(mapper.writeValueAsString(aCommand));
@@ -339,15 +327,12 @@ public class CategoryAPITest {
         when(updateCategoryUseCase.execute(any()))
                 .thenThrow(NotFoundException.with(Category.class, CategoryID.from(expectedId)));
 
-//        final var aCommand =
-//                new UpdateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
-
         final var aCommand =
                 new UpdateCategoryRequest(expectedName, expectedDescription, expectedIsActive);
 
         // when
         final var request = put("/categories/{id}", expectedId)
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(mapper.writeValueAsString(aCommand));
@@ -377,7 +362,7 @@ public class CategoryAPITest {
 
         // when
         final var request = delete("/categories/{id}", expectedId)
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -410,7 +395,7 @@ public class CategoryAPITest {
 
         // when
         final var request = get("/categories")
-//                .with(ApiTest.CATEGORIES_JWT)
+                .with(ApiTest.CATEGORIES_JWT)
                 .queryParam("page", String.valueOf(expectedPage))
                 .queryParam("perPage", String.valueOf(expectedPerPage))
                 .queryParam("sort", expectedSort)

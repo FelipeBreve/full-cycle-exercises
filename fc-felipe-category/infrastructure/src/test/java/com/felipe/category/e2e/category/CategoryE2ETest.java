@@ -1,6 +1,7 @@
 package com.felipe.category.e2e.category;
 
 
+import com.felipe.category.ApiTest;
 import com.felipe.category.E2ETest;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.e2e.MockDsl;
@@ -178,7 +179,7 @@ public class CategoryE2ETest implements MockDsl {
         Assertions.assertEquals(0, categoryRepository.count());
 
         final var aRequest = get("/categories/123")
-//                .with(ApiTest.ADMIN_JWT)
+                .with(ApiTest.ADMIN_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 

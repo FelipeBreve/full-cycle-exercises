@@ -16,9 +16,10 @@ import java.lang.annotation.*;
 @DataJpaTest
 @ComponentScan(
         basePackages = "com.felipe.category",
+        useDefaultFilters = false,
         includeFilters =
         {
-            @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".[MySQLGateway]")
+            @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*MySQLGateway")
         }
 )
 @ExtendWith(MySQLCleanUpExtension.class)

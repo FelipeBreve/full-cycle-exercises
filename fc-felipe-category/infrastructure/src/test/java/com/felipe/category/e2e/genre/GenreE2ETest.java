@@ -1,5 +1,6 @@
 package com.felipe.category.e2e.genre;
 
+import com.felipe.category.ApiTest;
 import com.felipe.category.E2ETest;
 import com.felipe.category.domain.category.CategoryID;
 import com.felipe.category.domain.genre.GenreID;
@@ -212,7 +213,7 @@ public class GenreE2ETest implements MockDsl {
         Assertions.assertEquals(0, genreRepository.count());
 
         final var aRequest = get("/genres/123")
-//                .with(ApiTest.ADMIN_JWT)
+                .with(ApiTest.ADMIN_JWT)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 

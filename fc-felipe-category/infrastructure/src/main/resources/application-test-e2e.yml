@@ -6,19 +6,24 @@ amqp:
   username: adm_videos
   password: 123456
 
-spring:
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+keycloak:
+  realm: test
+  host: http://test:8443
 
 logging:
   level:
     ROOT: info
+
 mysql:
   username: root
   password: 123456
   schema: adm_videos
   url: localhost:${mysql.port}
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
 
 # https://github.com/testcontainers/testcontainers-java/issues/4958
 # Solucao do problema do WSL com Windows
